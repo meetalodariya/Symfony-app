@@ -1,0 +1,25 @@
+<div class="login-wrapper">
+    <div class="login-div">
+        <form  method="POST" action="" id="loginForm"  >
+            <ul style="list-style-type:none;">
+                <li>
+                    <input id="loginEmail" type="text" name="email" placeholder="Please enter your Email here"/>
+                </li>
+                <li>
+                    <input  id="loginPassword" type="password" name="password" placeholder="password"/>
+                    <input type="button" id="subimtForm" name="submit"  onclick="submitForm()" value="Log in"/>
+                </li>
+                <li>
+                    <input type="checkbox" Value="Remember me" > Remember me
+                </li>
+                <li class="error-li" hidden id="loginError" >
+                    <div id="errorDiv"class="span-fp-error">  </div>
+                </li>
+
+            </ul>
+
+
+
+        </form>
+    </div>
+</div>
