@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ id }} {% endblock %}
+
+
+{% block body %}
+    <h1> ID {{ id }} </h1>
+    <b>First Name : {{ postByID.name }}</b>
+    <b>Last Name : {{ postByID.lastname }} </b>
+{% endblock %}

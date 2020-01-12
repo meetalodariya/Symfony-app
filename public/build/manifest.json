@@ -1,0 +1,10 @@
+{
+  "build/css/app.css": "/build/css/app.css",
+  "build/js/app.js": "/build/js/app.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/fonts/fontawesome-webfont.eot?v=4.5.0": "/build/fonts/fontawesome-webfont.32400f4e.eot",
+  "build/fonts/fontawesome-webfont.woff?v=4.5.0": "/build/fonts/fontawesome-webfont.a35720c2.woff",
+  "build/fonts/fontawesome-webfont.ttf?v=4.5.0": "/build/fonts/fontawesome-webfont.a3de2170.ttf",
+  "build/fonts/fontawesome-webfont.woff2?v=4.5.0": "/build/fonts/fontawesome-webfont.db812d8a.woff2",
+  "build/images/fontawesome-webfont.svg?v=4.5.0": "/build/images/fontawesome-webfont.f775f9cc.svg"
+}

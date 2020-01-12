@@ -9,21 +9,31 @@
 namespace App\Controller;
 
 
+use Monolog\Logger;
+use Psr\Log\LoggerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
-class LoginController
+
+class BaseController extends AbstractController
 {
+
     /**
-     * @Route("/auth/login", methods={"POST","HEAD"})
-     *
+     * @var LoggerInterface
      */
-    public function login(Request $request){
-        $email = $request->get('email');
-        $password = $request->get('password');
-        $this->logger->info($email);
-        $this->logger->info($password);
-        return new Response('email:'. $email . '<br>' .'password:' . $password);
+    private $logger;
+
+
+    public function __construct(LoggerInterface $logger)
+    {
+
+        $this->logger = $logger;
+    }
+
+    public function getLogger(){
+        return $this->logger;
     }
 }

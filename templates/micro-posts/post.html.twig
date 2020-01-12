@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for post in posts %}
+        <a href="{{ path('micro_post_show' ,{ id: post.id  }) }}">
+    <div class="card border-primary mb-3">
+        <div class="card-body">
+            <h4 class="card-title">
+                @username
+                <small class="float-right text-muted">{{ post.date|date("d/m/Y") }}</small>
+                <p style="text-indent :5em;" > </p>
+                <small><a class="float-right" href="{{ path('micro-post-edit' ,{id:post.id}) }}">Edit</a></small>
+                <small><span class="float-right text-muted">◦</span></small>
+                <small><a class="float-right" href="{{ path('micro-post-delete' ,{id:post.id}) }}">Delete</a></small>
+            </h4>
+            <p class="card-text">{{ post.text }}</p>
+
+        </div>
+    </div>
+        </a>
+
+    {% endfor %}
+
+{% endblock %}

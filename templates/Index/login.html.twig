@@ -1,22 +1,33 @@
 <div class="login-wrapper">
     <div class="login-div">
-        <form  method="POST" action="" id="loginForm"  >
+        <form  method="POST" action="{{ path('app_login') }}" id="loginForm"  >
             <ul style="list-style-type:none;">
                 <li>
-                    <input id="loginEmail" type="text" name="email" placeholder="Please enter your Email here"/>
+                    <input id="loginEmail" type="text" name="email" placeholder="Please enter your Email here" value="{{ last_username }}"/>
                 </li>
                 <li>
                     <input  id="loginPassword" type="password" name="password" placeholder="password"/>
-                    <input type="button" id="subimtForm" name="submit"  onclick="submitForm()" value="Log in"/>
+                    <input type="submit" id="subimtForm" onclick=""  value="Log in"/>
                 </li>
                 <li>
                     <input type="checkbox" Value="Remember me" > Remember me
                 </li>
+
+                {% if error %}
+                <li class="error-li"  id="loginError" >
+                    <div id="errorDiv"class="span-fp-error"> {{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                </li>
+                {% endif %}
                 <li class="error-li" hidden id="loginError" >
                     <div id="errorDiv"class="span-fp-error">  </div>
                 </li>
 
+
             </ul>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            <input type="hidden" name="_target_path" value="{{ app.request.get('redirect_to') }}">
+
 
 
 

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="container">
+    <div class="card border-primary mb-3">
+        <div class="card-body">
+            <h4 class="card-title">
+                @username
+                <small class="float-right text-muted">{{ post.date|date("d/m/Y") }}</small>
+            </h4>
+            <p class="card-text">{{ post.text }}</p>
+            <img class="card-img-top" src="https://source.unsplash.com/random/300x200" alt="" style="width:200px;height:200px;">
+        </div>
+    </div>
+{% endblock %}
