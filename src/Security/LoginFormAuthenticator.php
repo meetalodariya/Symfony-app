@@ -45,7 +45,6 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 
     public function getCredentials(Request $request)
     {
-
         /*$data = json_decode($request->getContent(),true);
         $email = $data[0]['value'];
         $password = $data[1]['value'];
@@ -97,10 +96,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
-
             return new RedirectResponse($this->urlGenerator->generate('micro-post-index'));
-
-
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
        // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
@@ -109,4 +105,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
     {
         return $this->urlGenerator->generate('app_login');
     }
+
+
 }
+

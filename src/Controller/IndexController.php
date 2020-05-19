@@ -22,7 +22,7 @@ class IndexController extends BaseController
     //STEP-1
     /**
      * @Route("/", name="home_page")
-     * @Route("/signup", name="signup_page")
+     *
      */
     public function index(AuthenticationUtils $authenticationUtils){
 

@@ -1,0 +1,20 @@
+#main-section {
+  background: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height:600px;
+}
+
+#main-section #dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 625px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.navbar {
+  opacity: 0.9;
+}

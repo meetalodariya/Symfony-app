@@ -1,36 +1,41 @@
-<div class="login-wrapper">
-    <div class="login-div">
-        <form  method="POST" action="{{ path('app_login') }}" id="loginForm"  >
-            <ul style="list-style-type:none;">
-                <li>
-                    <input id="loginEmail" type="text" name="email" placeholder="Please enter your Email here" value="{{ last_username }}"/>
-                </li>
-                <li>
-                    <input  id="loginPassword" type="password" name="password" placeholder="password"/>
-                    <input type="submit" id="subimtForm" onclick=""  value="Log in"/>
-                </li>
-                <li>
-                    <input type="checkbox" Value="Remember me" > Remember me
-                </li>
-
-                {% if error %}
-                <li class="error-li"  id="loginError" >
-                    <div id="errorDiv"class="span-fp-error"> {{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                </li>
-                {% endif %}
-                <li class="error-li" hidden id="loginError" >
-                    <div id="errorDiv"class="span-fp-error">  </div>
-                </li>
-
-
-            </ul>
-
+<div class="container px-2 pt-5 pb-3 w-25 ">
+    <div class="py-3 px-3 mt-4 bg-light border border-dark rounded ">
+        <div>
+            <div class="mx-auto">
+                <h4>Log In</h4>
+            </div>
+        </div>
+        <form method="POST" action="{{ path('app_login') }}" id="loginForm">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input
+                        name="email"
+                        class="form-control "
+                        type="email"
+                        id="email"
+                        value="{{ last_username }}"
+                        placeholder="name@example.com"
+                        required
+                />
+                <div id="errorEmail" class="invalid-feedback">
+                </div>
+            </div>
+            <div id="pass" class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control " type="password" name="password" id="password" required/>
+                <div id="errorPass" class="invalid-feedback">  </div>
+            </div>
+            <button
+                    type="button"
+                    onclick="submitForm()"
+                    class="btn btn-outline-success mb-1"
+            >Log In
+            </button>
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
             <input type="hidden" name="_target_path" value="{{ app.request.get('redirect_to') }}">
-
-
-
-
         </form>
+        <small> <a href="{{ path('signup') }}">Create account</a></small>
     </div>
 </div>
+
+<!--error.messageKey|trans(error.messageData, 'security') -->

@@ -6,7 +6,6 @@ security:
        database_users:
           entity: { class: App\Entity\User , property: email }
 
-
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -14,13 +13,9 @@ security:
         main:
             anonymous: true
             pattern: ^/
-
-
-
             logout:
                 path: security_logout
                 target: micro-post-index
-
             guard:
                 authenticators:
                     - App\Security\LoginFormAuthenticator

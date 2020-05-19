@@ -69,7 +69,7 @@ class MicroPostsController extends  BaseController
      */
     public function index()
     {
-        $html = $this->render('micro-posts/index.html.twig' ,
+        $html = $this->renderView('micro-posts/index.html.twig' ,
             ['posts' => $this->microPostRepository->findAll()]);
 
         return new Response($html);
@@ -79,7 +79,7 @@ class MicroPostsController extends  BaseController
      * @Route("/show/{id}",name="micro_post_show")
      */
     public function postShow($id){
-        $html = $this->render('micro-posts/show.html.twig', ['post'=> $this->microPostRepository->find($id)]);
+        $html = $this->renderView('micro-posts/show.html.twig', ['post'=> $this->microPostRepository->find($id)]);
         return new Response($html);
     }
 
@@ -94,7 +94,7 @@ class MicroPostsController extends  BaseController
             $this->entityManager->flush();
             return new RedirectResponse($this->router->generate('micro-post-index'));
         }
-        return new Response($this->render('micro-posts/add.html.twig' , ['form' => $form->createView()]) );
+        return new Response($this->renderView('micro-posts/add.html.twig' , ['form' => $form->createView()]) );
     }
 
     /**
@@ -114,7 +114,7 @@ class MicroPostsController extends  BaseController
 
             return new RedirectResponse($this->router->generate('micro-post-index'));
         }
-        return new Response($this->render('micro-posts/add.html.twig' , ['form' => $form->createView()]) );
+        return new Response($this->renderView('micro-posts/add.html.twig' , ['form' => $form->createView()]) );
     }
 
     /**
